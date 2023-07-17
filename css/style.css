@@ -72,9 +72,20 @@ ul li a:hover {
 }
 
 .main-content {
+  font-size: 16px;
   max-width: 384px;
   padding-top: 30vh;
   padding-left: 12px;
+}
+
+.main-content h2 {
+  font-size: 18px;
+  font-family: "CooperHewitt-Medium", sans-serif; /* use CooperHewitt-Book as the default font */
+}
+
+.project {
+  border-left: 1px solid #b3d3d3;
+  padding-left: 18px;
 }
 
 /* Styles for smaller screens */
