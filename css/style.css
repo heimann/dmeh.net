@@ -1,0 +1,59 @@
+/* Basic styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fbf8f3;
+}
+
+.wrapper {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  flex: 0 0 400px; /* this sets the width of the sidebar, you can adjust as necessary */
+  overflow-y: auto; /* allows scrolling in the sidebar if necessary */
+  display: grid;
+  align-content: center;
+}
+
+.sidebar-content {
+  padding: 20px;
+  text-align: right;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li a {
+  color: #000;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  color: #3f3f3f;
+  text-decoration: none;
+}
+
+.main {
+  flex-grow: 1;
+  overflow-y: auto; /* allows scrolling in the main content area */
+}
+
+.main-content {
+  max-width: 384px;
+  padding-top: 30vh;
+  padding-left: 12px;
+}
+
+/* Styles for smaller screens */
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    flex: 0 0 auto; /* reset the fixed width of the sidebar */
+  }
+}
