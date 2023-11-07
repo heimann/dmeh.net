@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <title>dmeh.net - GPT Assistants for Code Documentation</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icon.png" />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="manifest" href="site.webmanifest" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
+    <meta name="theme-color" content="#fbf8f3" />
+  </head>
+
+  <body>
+    <body>
+      <div class="wrapper">
+        <div class="sidebar">
+          <div class="sidebar-content">
+            <h1 id="wordmark" class="main-wordmark"></h1>
+            <nav>
+              <ul></ul>
+            </nav>
+          </div>
+        </div>
+        <div class="main">
+          <div class="main-content">
+            <h3>GPT Assistants for Code Documentation</h3>
+            <p>As someone who writes mostly Elixir, I've struggled for months now with ChatGPT and GPT-4 having outdated documentation for most of the packages I use daily. But with the release of <a href="https://platform.openai.com/assistants">Assistants</a> today by OpenAI I think we finally have a simple and great solve.</p>
+
+            <h4>Convert HTML docs to txt</h4>
+            <p>Most modern programming languages, and Elixir is no different has first class tooling for building documentation in HTML. In elixir you can do it like this:</p>
+            <pre><code class="bash">mix hex.docs fetch phoenix_live_view</code></pre>
+            <p>(replace phoenix_live_view with whatever package you want to document)</p>
+            <p>This will download the docs <b>~/.hex/docs/hexpm/</b></p>
+            <p>Then we can use <a href="https://lynx.invisible-island.net/">Lynx</a> to convert the HTML documentation to txt files:</p>
+            <pre><code class="bash">for file in ~/.hex/docs/hexpm/phoenix_live_view/0.20.1/*.html; do
+    lynx -dump "$file" > "${file%.html}.txt"
+done</code></pre>
+            <p>Now, we concatenate the files into one big txt file: 
+            <pre><code class="bash">cat ~/.hex/docs/hexpm/phoenix_live_view/0.20.1/*.txt > combined_docs.txt</code></pre>
+            <p>Ultimately you're probably going to want to do more processing on the text etc but this worked well enough for me to start with!</p>
+            <h4>Upload docs</h4>
+            <p>Now all we have to do is upload the .txt file under the FILES heading when building our New Assistant</p>
+            <img style="width: 100%; height: auto;" src="images/upload_file_to_assistant.JPG" />
+          </div>
+        </div>
+      </div>
+
+      <script src="js/src.js"></script>
+<!-- Initialize Highlight.js -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+  </body>
+</html>
