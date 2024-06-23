@@ -53,6 +53,7 @@ ul li a:hover {
   font-size: 16px;
   max-width: 468px;
   padding: 1vh 12px 12px 12px;
+  margin-bottom: 50px; /* Add bottom margin */
 }
 
 @media (min-width: 768px) {
