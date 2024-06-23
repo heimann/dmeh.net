@@ -1,34 +1,12 @@
-/* Font configuration              */
-/* I like Cooper Hewitt because it */
-/* makes me think of museums.      */
-/* Ironic because I never liked    */
-/* spending a lot of time in them. */
-@font-face {
-  font-family: "CooperHewitt-Bold";
-  src: url("../fonts/CooperHewitt-Bold.otf");
-}
-
-@font-face {
-  font-family: "CooperHewitt-Book";
-  src: url("../fonts/CooperHewitt-Book.otf");
-}
-
-@font-face {
-  font-family: "CooperHewitt-Light";
-  src: url("../fonts/CooperHewitt-Light.otf");
-}
-
-@font-face {
-  font-family: "CooperHewitt-Medium";
-  src: url("../fonts/CooperHewitt-Medium.otf");
-}
+/* Font configuration */
+/* Using Inter font from Google Fonts */
 
 /* Basic styles */
 body {
   margin: 0;
   padding: 0;
   background-color: #fff;
-  font-family: "CooperHewitt-Book", sans-serif; /* use CooperHewitt-Book as the default font */
+  font-family: 'Inter', sans-serif; /* use Inter as the default font */
 }
 
 .main-wordmark {
@@ -85,7 +63,8 @@ ul li a:hover {
 
 .main-content h2 {
   font-size: 18px;
-  font-family: "CooperHewitt-Medium", sans-serif; /* use CooperHewitt-Book as the default font */
+  font-family: 'Inter', sans-serif; /* use Inter as the default font */
+  font-weight: 500; /* Medium weight */
 }
 
 .project {
